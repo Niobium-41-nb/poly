@@ -25,6 +25,9 @@
 
 * `hoj` 曾经被当成 `hydro` 的别名（`poly package --format hoj` 会导出 Hydro 包），现拆分为独立格式
 * `problem.json` 带 UTF-8 BOM（记事本 / “UTF-8 with BOM” 保存）时，JSON 解析会直接失败
+* 安装包向导中文显示为乱码：`installer/ChineseSimplified.isl` 生成时被 `WebClient.DownloadString`
+  按系统 ANSI（GBK）解码，文件里存的就是乱码字符。现改为按**原始字节**下载并补上 UTF-8 BOM
+  （Inno Setup 只会把带 BOM 的脚本/语言文件当 UTF-8 读）
 
 ### 发布产物
 

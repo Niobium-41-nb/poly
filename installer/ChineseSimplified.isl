@@ -18,7 +18,7 @@
 [LangOptions]
 ; The following three entries are very important. Be sure to read and
 ; understand the '[LangOptions] section' topic in the help file.
-LanguageName=绠€浣撲腑鏂?
+LanguageName=简体中文
 ; About LanguageID, to reference link:
 ; https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c
 LanguageID=$0804
@@ -37,381 +37,381 @@ LanguageCodePage=936
 [Messages]
 
 ; *** Application titles
-SetupAppTitle=瀹夎
-SetupWindowTitle=瀹夎 - %1
-UninstallAppTitle=鍗歌浇
-UninstallAppFullTitle=%1 鍗歌浇
+SetupAppTitle=安装
+SetupWindowTitle=安装 - %1
+UninstallAppTitle=卸载
+UninstallAppFullTitle=%1 卸载
 
 ; *** Misc. common
-InformationTitle=淇℃伅
-ConfirmTitle=纭
-ErrorTitle=閿欒
+InformationTitle=信息
+ConfirmTitle=确认
+ErrorTitle=错误
 
 ; *** SetupLdr messages
-SetupLdrStartupMessage=鐜板湪灏嗗畨瑁?%1銆傛偍鎯宠缁х画鍚楋紵
-LdrCannotCreateTemp=鏃犳硶鍒涘缓涓存椂鏂囦欢銆傚畨瑁呯▼搴忓凡涓
-LdrCannotExecTemp=鏃犳硶鎵ц涓存椂鐩綍涓殑鏂囦欢銆傚畨瑁呯▼搴忓凡涓
+SetupLdrStartupMessage=现在将安装 %1。您想要继续吗？
+LdrCannotCreateTemp=无法创建临时文件。安装程序已中止
+LdrCannotExecTemp=无法执行临时目录中的文件。安装程序已中止
 HelpTextNote=
 
 ; *** Startup error messages
-LastErrorMessage=%1銆?n%n閿欒 %2: %3
-SetupFileMissing=瀹夎鐩綍涓己灏戞枃浠?%1銆傝淇杩欎釜闂鎴栬€呰幏鍙栫▼搴忕殑鏂板壇鏈€?
-SetupFileCorrupt=瀹夎鏂囦欢宸叉崯鍧忋€傝鑾峰彇绋嬪簭鐨勬柊鍓湰銆?
-SetupFileCorruptOrWrongVer=瀹夎鏂囦欢宸叉崯鍧忥紝鎴栨槸涓庤繖涓畨瑁呯▼搴忕殑鐗堟湰涓嶅吋瀹广€傝淇杩欎釜闂鎴栬幏鍙栨柊鐨勭▼搴忓壇鏈€?
-InvalidParameter=鏃犳晥鐨勫懡浠よ鍙傛暟锛?n%n%1
-SetupAlreadyRunning=瀹夎绋嬪簭宸插湪杩愯銆?
-WindowsVersionNotSupported=姝ょ▼搴忎笉鏀寔褰撳墠璁＄畻鏈鸿繍琛岀殑 Windows 鐗堟湰銆?
-WindowsServicePackRequired=姝ょ▼搴忛渶瑕?%1 鏈嶅姟鍖?%2 鎴栨洿楂樼増鏈€?
-NotOnThisPlatform=姝ょ▼搴忎笉鑳藉湪 %1 涓婅繍琛屻€?
-OnlyOnThisPlatform=姝ょ▼搴忓彧鑳藉湪 %1 涓婅繍琛屻€?
-OnlyOnTheseArchitectures=姝ょ▼搴忓彧鑳藉畨瑁呭埌涓轰笅鍒楀鐞嗗櫒鏋舵瀯璁捐鐨?Windows 鐗堟湰涓細%n%n%1
-WinVersionTooLowError=姝ょ▼搴忛渶瑕?%1 鐗堟湰 %2 鎴栨洿楂樸€?
-WinVersionTooHighError=姝ょ▼搴忎笉鑳藉畨瑁呬簬 %1 鐗堟湰 %2 鎴栨洿楂樸€?
-AdminPrivilegesRequired=鍦ㄥ畨瑁呮绋嬪簭鏃舵偍蹇呴』浠ョ鐞嗗憳韬唤鐧诲綍銆?
-PowerUserPrivilegesRequired=鍦ㄥ畨瑁呮绋嬪簭鏃舵偍蹇呴』浠ョ鐞嗗憳韬唤鎴栭珮绾х敤鎴风粍韬唤鐧诲綍銆?
-SetupAppRunningError=瀹夎绋嬪簭妫€娴嬪埌 %1 褰撳墠姝ｅ湪杩愯銆?n%n璇峰厛鍏抽棴姝ｅ湪杩愯鐨勭▼搴忥紝鐒跺悗鐐瑰嚮鈥滅‘瀹氣€濈户缁紝鎴栫偣鍑烩€滃彇娑堚€濋€€鍑恒€?
-UninstallAppRunningError=鍗歌浇绋嬪簭妫€娴嬪埌 %1 褰撳墠姝ｅ湪杩愯銆?n%n璇峰厛鍏抽棴姝ｅ湪杩愯鐨勭▼搴忥紝鐒跺悗鐐瑰嚮鈥滅‘瀹氣€濈户缁紝鎴栫偣鍑烩€滃彇娑堚€濋€€鍑恒€?
+LastErrorMessage=%1。%n%n错误 %2: %3
+SetupFileMissing=安装目录中缺少文件 %1。请修正这个问题或者获取程序的新副本。
+SetupFileCorrupt=安装文件已损坏。请获取程序的新副本。
+SetupFileCorruptOrWrongVer=安装文件已损坏，或是与这个安装程序的版本不兼容。请修正这个问题或获取新的程序副本。
+InvalidParameter=无效的命令行参数：%n%n%1
+SetupAlreadyRunning=安装程序已在运行。
+WindowsVersionNotSupported=此程序不支持当前计算机运行的 Windows 版本。
+WindowsServicePackRequired=此程序需要 %1 服务包 %2 或更高版本。
+NotOnThisPlatform=此程序不能在 %1 上运行。
+OnlyOnThisPlatform=此程序只能在 %1 上运行。
+OnlyOnTheseArchitectures=此程序只能安装到为下列处理器架构设计的 Windows 版本中：%n%n%1
+WinVersionTooLowError=此程序需要 %1 版本 %2 或更高。
+WinVersionTooHighError=此程序不能安装于 %1 版本 %2 或更高。
+AdminPrivilegesRequired=在安装此程序时您必须以管理员身份登录。
+PowerUserPrivilegesRequired=在安装此程序时您必须以管理员身份或高级用户组身份登录。
+SetupAppRunningError=安装程序检测到 %1 当前正在运行。%n%n请先关闭正在运行的程序，然后点击“确定”继续，或点击“取消”退出。
+UninstallAppRunningError=卸载程序检测到 %1 当前正在运行。%n%n请先关闭正在运行的程序，然后点击“确定”继续，或点击“取消”退出。
 
 ; *** Startup questions
-PrivilegesRequiredOverrideTitle=閫夋嫨瀹夎绋嬪簭瀹夎妯″紡
-PrivilegesRequiredOverrideInstruction=閫夋嫨瀹夎妯″紡
-PrivilegesRequiredOverrideText1=%1 鍙互涓烘墍鏈夌敤鎴峰畨瑁咃紙闇€瑕佺鐞嗗憳鏉冮檺锛夛紝鎴栦粎涓烘偍瀹夎銆?
-PrivilegesRequiredOverrideText2=%1 鍙互浠呬负鎮ㄥ畨瑁咃紝鎴栦负鎵€鏈夌敤鎴峰畨瑁咃紙闇€瑕佺鐞嗗憳鏉冮檺锛夈€?
-PrivilegesRequiredOverrideAllUsers=涓烘墍鏈夌敤鎴峰畨瑁?&A)
-PrivilegesRequiredOverrideAllUsersRecommended=涓烘墍鏈夌敤鎴峰畨瑁?&A)锛堟帹鑽愶級
-PrivilegesRequiredOverrideCurrentUser=浠呬负鎴戝畨瑁?&M)
-PrivilegesRequiredOverrideCurrentUserRecommended=浠呬负鎴戝畨瑁?&M)锛堟帹鑽愶級
+PrivilegesRequiredOverrideTitle=选择安装程序安装模式
+PrivilegesRequiredOverrideInstruction=选择安装模式
+PrivilegesRequiredOverrideText1=%1 可以为所有用户安装（需要管理员权限），或仅为您安装。
+PrivilegesRequiredOverrideText2=%1 可以仅为您安装，或为所有用户安装（需要管理员权限）。
+PrivilegesRequiredOverrideAllUsers=为所有用户安装(&A)
+PrivilegesRequiredOverrideAllUsersRecommended=为所有用户安装(&A)（推荐）
+PrivilegesRequiredOverrideCurrentUser=仅为我安装(&M)
+PrivilegesRequiredOverrideCurrentUserRecommended=仅为我安装(&M)（推荐）
 
 ; *** Misc. errors
-ErrorCreatingDir=瀹夎绋嬪簭鏃犳硶鍒涘缓鐩綍鈥?1鈥?
-ErrorTooManyFilesInDir=鏃犳硶鍦ㄧ洰褰曗€?1鈥濅腑鍒涘缓鏂囦欢锛屽洜涓洪噷闈㈠寘鍚お澶氭枃浠躲€?
+ErrorCreatingDir=安装程序无法创建目录“%1”
+ErrorTooManyFilesInDir=无法在目录“%1”中创建文件，因为里面包含太多文件。
 
 ; *** Setup common messages
-ExitSetupTitle=閫€鍑哄畨瑁呯▼搴?
-ExitSetupMessage=瀹夎绋嬪簭灏氭湭瀹屾垚銆傚鏋滅幇鍦ㄩ€€鍑猴紝灏嗕笉浼氬畨瑁呰绋嬪簭銆?n%n鎮ㄤ箣鍚庡彲浠ュ啀娆¤繍琛屽畨瑁呯▼搴忓畬鎴愬畨瑁呫€?n%n鐜板湪閫€鍑哄畨瑁呯▼搴忓悧锛?
-AboutSetupMenuItem=鍏充簬瀹夎绋嬪簭(&A)...
-AboutSetupTitle=鍏充簬瀹夎绋嬪簭
-AboutSetupMessage=%1 鐗堟湰 %2%n%3%n%n%1 涓婚〉锛?n%4
+ExitSetupTitle=退出安装程序
+ExitSetupMessage=安装程序尚未完成。如果现在退出，将不会安装该程序。%n%n您之后可以再次运行安装程序完成安装。%n%n现在退出安装程序吗？
+AboutSetupMenuItem=关于安装程序(&A)...
+AboutSetupTitle=关于安装程序
+AboutSetupMessage=%1 版本 %2%n%3%n%n%1 主页：%n%4
 AboutSetupNote=
-TranslatorNote=绠€浣撲腑鏂囩炕璇戠敱 Kira锛?47320916@qq.com锛夌淮鎶ゃ€傞」鐩湴鍧€锛歨ttps://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation
+TranslatorNote=简体中文翻译由 Kira（847320916@qq.com）维护。项目地址：https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation
 
 ; *** Buttons
-ButtonBack=< 涓婁竴姝?&B)
-ButtonNext=涓嬩竴姝?&N) >
-ButtonInstall=瀹夎(&I)
-ButtonOK=纭畾
-ButtonCancel=鍙栨秷
-ButtonYes=鏄?&Y)
-ButtonYesToAll=鍏ㄦ槸(&A)
-ButtonNo=鍚?&N)
-ButtonNoToAll=鍏ㄥ惁(&O)
-ButtonFinish=瀹屾垚(&F)
-ButtonBrowse=娴忚(&B)...
-ButtonWizardBrowse=娴忚(&R)...
-ButtonNewFolder=鏂板缓鏂囦欢澶?&M)
+ButtonBack=< 上一步(&B)
+ButtonNext=下一步(&N) >
+ButtonInstall=安装(&I)
+ButtonOK=确定
+ButtonCancel=取消
+ButtonYes=是(&Y)
+ButtonYesToAll=全是(&A)
+ButtonNo=否(&N)
+ButtonNoToAll=全否(&O)
+ButtonFinish=完成(&F)
+ButtonBrowse=浏览(&B)...
+ButtonWizardBrowse=浏览(&R)...
+ButtonNewFolder=新建文件夹(&M)
 
 ; *** "Select Language" dialog messages
-SelectLanguageTitle=閫夋嫨瀹夎璇█
-SelectLanguageLabel=閫夋嫨瀹夎鏃朵娇鐢ㄧ殑璇█銆?
+SelectLanguageTitle=选择安装语言
+SelectLanguageLabel=选择安装时使用的语言。
 
 ; *** Common wizard text
-ClickNext=鐐瑰嚮鈥滀笅涓€姝モ€濈户缁紝鎴栫偣鍑烩€滃彇娑堚€濋€€鍑哄畨瑁呯▼搴忋€?
+ClickNext=点击“下一步”继续，或点击“取消”退出安装程序。
 BeveledLabel=
-BrowseDialogTitle=娴忚鏂囦欢澶?
-BrowseDialogLabel=鍦ㄤ笅闈㈢殑鍒楄〃涓€夋嫨涓€涓枃浠跺す锛岀劧鍚庣偣鍑烩€滅‘瀹氣€濄€?
-NewFolderName=鏂板缓鏂囦欢澶?
+BrowseDialogTitle=浏览文件夹
+BrowseDialogLabel=在下面的列表中选择一个文件夹，然后点击“确定”。
+NewFolderName=新建文件夹
 
 ; *** "Welcome" wizard page
-WelcomeLabel1=娆㈣繋浣跨敤 [name] 瀹夎鍚戝
-WelcomeLabel2=鍗冲皢鍦ㄦ偍鐨勮绠楁満涓婂畨瑁?[name/ver]銆?n%n寤鸿鎮ㄥ湪缁х画瀹夎鍓嶅叧闂墍鏈夊叾浠栧簲鐢ㄧ▼搴忋€?
+WelcomeLabel1=欢迎使用 [name] 安装向导
+WelcomeLabel2=即将在您的计算机上安装 [name/ver]。%n%n建议您在继续安装前关闭所有其他应用程序。
 
 ; *** "Password" wizard page
-WizardPassword=瀵嗙爜
-PasswordLabel1=姝ゅ畨瑁呯▼搴忛渶瑕佸瘑鐮侀獙璇併€?
-PasswordLabel3=璇疯緭鍏ュ瘑鐮侊紝鐒跺悗鐐瑰嚮鈥滀笅涓€姝モ€濈户缁€傚瘑鐮佸尯鍒嗗ぇ灏忓啓銆?
-PasswordEditLabel=瀵嗙爜(&P)锛?
-IncorrectPassword=鎮ㄨ緭鍏ョ殑瀵嗙爜涓嶆纭紝璇烽噸鏂拌緭鍏ャ€?
+WizardPassword=密码
+PasswordLabel1=此安装程序需要密码验证。
+PasswordLabel3=请输入密码，然后点击“下一步”继续。密码区分大小写。
+PasswordEditLabel=密码(&P)：
+IncorrectPassword=您输入的密码不正确，请重新输入。
 
 ; *** "License Agreement" wizard page
-WizardLicense=璁稿彲鍗忚
-LicenseLabel=璇峰湪缁х画瀹夎鍓嶉槄璇讳互涓嬮噸瑕佷俊鎭€?
-LicenseLabel3=璇烽槄璇讳笅鍒楄鍙崗璁€傚湪缁х画瀹夎鍓嶆偍蹇呴』鍚屾剰杩欎簺鍗忚鏉℃銆?
-LicenseAccepted=鎴戝悓鎰忔鍗忚(&A)
-LicenseNotAccepted=鎴戜笉鍚屾剰姝ゅ崗璁?&D)
+WizardLicense=许可协议
+LicenseLabel=请在继续安装前阅读以下重要信息。
+LicenseLabel3=请阅读下列许可协议。在继续安装前您必须同意这些协议条款。
+LicenseAccepted=我同意此协议(&A)
+LicenseNotAccepted=我不同意此协议(&D)
 
 ; *** "Information" wizard pages
-WizardInfoBefore=淇℃伅
-InfoBeforeLabel=璇峰湪缁х画瀹夎鍓嶉槄璇讳互涓嬮噸瑕佷俊鎭€?
-InfoBeforeClickLabel=鍑嗗濂界户缁畨瑁呭悗锛岀偣鍑烩€滀笅涓€姝モ€濄€?
-WizardInfoAfter=淇℃伅
-InfoAfterLabel=璇峰湪缁х画瀹夎鍓嶉槄璇讳互涓嬮噸瑕佷俊鎭€?
-InfoAfterClickLabel=鍑嗗濂界户缁畨瑁呭悗锛岀偣鍑烩€滀笅涓€姝モ€濄€?
+WizardInfoBefore=信息
+InfoBeforeLabel=请在继续安装前阅读以下重要信息。
+InfoBeforeClickLabel=准备好继续安装后，点击“下一步”。
+WizardInfoAfter=信息
+InfoAfterLabel=请在继续安装前阅读以下重要信息。
+InfoAfterClickLabel=准备好继续安装后，点击“下一步”。
 
 ; *** "User Information" wizard page
-WizardUserInfo=鐢ㄦ埛淇℃伅
-UserInfoDesc=璇疯緭鍏ユ偍鐨勪俊鎭€?
-UserInfoName=鐢ㄦ埛鍚?&U)锛?
-UserInfoOrg=缁勭粐(&O)锛?
-UserInfoSerial=搴忓垪鍙?&S)锛?
-UserInfoNameRequired=璇疯緭鍏ョ敤鎴峰悕銆?
+WizardUserInfo=用户信息
+UserInfoDesc=请输入您的信息。
+UserInfoName=用户名(&U)：
+UserInfoOrg=组织(&O)：
+UserInfoSerial=序列号(&S)：
+UserInfoNameRequired=请输入用户名。
 
 ; *** "Select Destination Location" wizard page
-WizardSelectDir=閫夋嫨鐩爣浣嶇疆
-SelectDirDesc=鎮ㄦ兂灏?[name] 瀹夎鍦ㄥ摢閲岋紵
-SelectDirLabel3=瀹夎绋嬪簭灏嗗畨瑁?[name] 鍒颁笅闈㈢殑鏂囦欢澶逛腑銆?
-SelectDirBrowseLabel=鐐瑰嚮鈥滀笅涓€姝モ€濈户缁€傚鏋滄偍鎯抽€夋嫨鍏朵粬鏂囦欢澶癸紝鐐瑰嚮鈥滄祻瑙堚€濄€?
-DiskSpaceGBLabel=鑷冲皯闇€瑕佹湁 [gb] GB 鐨勫彲鐢ㄧ鐩樼┖闂淬€?
-DiskSpaceMBLabel=鑷冲皯闇€瑕佹湁 [mb] MB 鐨勫彲鐢ㄧ鐩樼┖闂淬€?
-CannotInstallToNetworkDrive=瀹夎绋嬪簭鏃犳硶瀹夎鍒颁竴涓綉缁滈┍鍔ㄥ櫒銆?
-CannotInstallToUNCPath=瀹夎绋嬪簭鏃犳硶瀹夎鍒颁竴涓?UNC 璺緞銆?
-InvalidPath=鎮ㄥ繀椤昏緭鍏ヤ竴涓甫椹卞姩鍣ㄧ洏绗︾殑瀹屾暣璺緞锛屼緥濡傦細%n%nC:\App%n%n鎴朥NC璺緞锛?n%n\\server\share
-InvalidDrive=鎮ㄩ€夊畾鐨勯┍鍔ㄥ櫒鎴?UNC 鍏变韩涓嶅瓨鍦ㄦ垨涓嶈兘璁块棶銆傝閫夋嫨鍏朵粬浣嶇疆銆?
-DiskSpaceWarningTitle=纾佺洏绌洪棿涓嶈冻
-DiskSpaceWarning=瀹夎绋嬪簭鑷冲皯闇€瑕?%1 KB 鐨勫彲鐢ㄧ┖闂存墠鑳藉畨瑁咃紝浣嗛€夊畾椹卞姩鍣ㄥ彧鏈?%2 KB 鐨勫彲鐢ㄧ┖闂淬€?n%n鎮ㄧ‘瀹氳缁х画鍚楋紵
-DirNameTooLong=鏂囦欢澶瑰悕绉版垨璺緞澶暱銆?
-InvalidDirName=鏂囦欢澶瑰悕绉版棤鏁堛€?
-BadDirName32=鏂囦欢澶瑰悕绉颁笉鑳藉寘鍚笅鍒椾换浣曞瓧绗︼細%n%n%1
-DirExistsTitle=鏂囦欢澶瑰凡瀛樺湪
-DirExists=鏂囦欢澶癸細%n%n%1%n%n宸茬粡瀛樺湪銆傛偍纭畾瀹夎鍒拌繖涓枃浠跺す涓悧锛?
-DirDoesntExistTitle=鏂囦欢澶逛笉瀛樺湪
-DirDoesntExist=鏂囦欢澶癸細%n%n%1%n%n涓嶅瓨鍦ㄣ€傛偍鎯宠鍒涘缓姝ゆ枃浠跺す鍚楋紵
+WizardSelectDir=选择目标位置
+SelectDirDesc=您想将 [name] 安装在哪里？
+SelectDirLabel3=安装程序将安装 [name] 到下面的文件夹中。
+SelectDirBrowseLabel=点击“下一步”继续。如果您想选择其他文件夹，点击“浏览”。
+DiskSpaceGBLabel=至少需要有 [gb] GB 的可用磁盘空间。
+DiskSpaceMBLabel=至少需要有 [mb] MB 的可用磁盘空间。
+CannotInstallToNetworkDrive=安装程序无法安装到一个网络驱动器。
+CannotInstallToUNCPath=安装程序无法安装到一个 UNC 路径。
+InvalidPath=您必须输入一个带驱动器盘符的完整路径，例如：%n%nC:\App%n%n或UNC路径：%n%n\\server\share
+InvalidDrive=您选定的驱动器或 UNC 共享不存在或不能访问。请选择其他位置。
+DiskSpaceWarningTitle=磁盘空间不足
+DiskSpaceWarning=安装程序至少需要 %1 KB 的可用空间才能安装，但选定驱动器只有 %2 KB 的可用空间。%n%n您确定要继续吗？
+DirNameTooLong=文件夹名称或路径太长。
+InvalidDirName=文件夹名称无效。
+BadDirName32=文件夹名称不能包含下列任何字符：%n%n%1
+DirExistsTitle=文件夹已存在
+DirExists=文件夹：%n%n%1%n%n已经存在。您确定安装到这个文件夹中吗？
+DirDoesntExistTitle=文件夹不存在
+DirDoesntExist=文件夹：%n%n%1%n%n不存在。您想要创建此文件夹吗？
 
 ; *** "Select Components" wizard page
-WizardSelectComponents=閫夋嫨缁勪欢
-SelectComponentsDesc=鎮ㄦ兂瀹夎鍝簺绋嬪簭缁勪欢锛?
-SelectComponentsLabel2=閫変腑鎮ㄦ兂瀹夎鐨勭粍浠讹紱鍙栨秷鎮ㄤ笉鎯冲畨瑁呯殑缁勪欢銆傜劧鍚庣偣鍑烩€滀笅涓€姝モ€濈户缁€?
-FullInstallation=瀹屽叏瀹夎
+WizardSelectComponents=选择组件
+SelectComponentsDesc=您想安装哪些程序组件？
+SelectComponentsLabel2=选中您想安装的组件；取消您不想安装的组件。然后点击“下一步”继续。
+FullInstallation=完全安装
 ; if possible don't translate 'Compact' as 'Minimal' (I mean 'Minimal' in your language)
-CompactInstallation=绠€娲佸畨瑁?
-CustomInstallation=鑷畾涔夊畨瑁?
-NoUninstallWarningTitle=缁勪欢宸插瓨鍦?
-NoUninstallWarning=瀹夎绋嬪簭妫€娴嬪埌涓嬪垪缁勪欢宸插畨瑁呭湪鎮ㄧ殑璁＄畻鏈轰腑锛?n%n%1%n%n鍙栨秷閫変腑杩欎簺缁勪欢涓嶄細鍗歌浇瀹冧滑銆?n%n鎮ㄧ‘瀹氳缁х画鍚楋紵
+CompactInstallation=简洁安装
+CustomInstallation=自定义安装
+NoUninstallWarningTitle=组件已存在
+NoUninstallWarning=安装程序检测到下列组件已安装在您的计算机中：%n%n%1%n%n取消选中这些组件不会卸载它们。%n%n您确定要继续吗？
 ComponentSize1=%1 KB
 ComponentSize2=%1 MB
-ComponentsDiskSpaceGBLabel=褰撳墠閫夋嫨鐨勭粍浠堕渶瑕佽嚦灏?[gb] GB 鐨勭鐩樼┖闂淬€?
-ComponentsDiskSpaceMBLabel=褰撳墠閫夋嫨鐨勭粍浠堕渶瑕佽嚦灏?[mb] MB 鐨勭鐩樼┖闂淬€?
+ComponentsDiskSpaceGBLabel=当前选择的组件需要至少 [gb] GB 的磁盘空间。
+ComponentsDiskSpaceMBLabel=当前选择的组件需要至少 [mb] MB 的磁盘空间。
 
 ; *** "Select Additional Tasks" wizard page
-WizardSelectTasks=閫夋嫨闄勫姞浠诲姟
-SelectTasksDesc=鎮ㄦ兂瑕佸畨瑁呯▼搴忔墽琛屽摢浜涢檮鍔犱换鍔★紵
-SelectTasksLabel2=閫夋嫨鎮ㄦ兂瑕佸畨瑁呯▼搴忓湪瀹夎 [name] 鏃舵墽琛岀殑闄勫姞浠诲姟锛岀劧鍚庣偣鍑烩€滀笅涓€姝モ€濄€?
+WizardSelectTasks=选择附加任务
+SelectTasksDesc=您想要安装程序执行哪些附加任务？
+SelectTasksLabel2=选择您想要安装程序在安装 [name] 时执行的附加任务，然后点击“下一步”。
 
 ; *** "Select Start Menu Folder" wizard page
-WizardSelectProgramGroup=閫夋嫨寮€濮嬭彍鍗曟枃浠跺す
-SelectStartMenuFolderDesc=瀹夎绋嬪簭搴旇鍦ㄥ摢閲屾斁缃▼搴忕殑蹇嵎鏂瑰紡锛?
-SelectStartMenuFolderLabel3=瀹夎绋嬪簭灏嗗湪涓嬪垪鈥滃紑濮嬧€濊彍鍗曟枃浠跺す涓垱寤虹▼搴忕殑蹇嵎鏂瑰紡銆?
-SelectStartMenuFolderBrowseLabel=鐐瑰嚮鈥滀笅涓€姝モ€濈户缁€傚鏋滄偍鎯抽€夋嫨鍏朵粬鏂囦欢澶癸紝鐐瑰嚮鈥滄祻瑙堚€濄€?
-MustEnterGroupName=鎮ㄥ繀椤昏緭鍏ヤ竴涓枃浠跺す鍚嶇О銆?
-GroupNameTooLong=鏂囦欢澶瑰悕绉版垨璺緞澶暱銆?
-InvalidGroupName=鏂囦欢澶瑰悕绉版棤鏁堛€?
-BadGroupName=鏂囦欢澶瑰悕绉颁笉鑳藉寘鍚笅鍒椾换浣曞瓧绗︼細%n%n%1
-NoProgramGroupCheck2=涓嶅垱寤哄紑濮嬭彍鍗曟枃浠跺す(&D)
+WizardSelectProgramGroup=选择开始菜单文件夹
+SelectStartMenuFolderDesc=安装程序应该在哪里放置程序的快捷方式？
+SelectStartMenuFolderLabel3=安装程序将在下列“开始”菜单文件夹中创建程序的快捷方式。
+SelectStartMenuFolderBrowseLabel=点击“下一步”继续。如果您想选择其他文件夹，点击“浏览”。
+MustEnterGroupName=您必须输入一个文件夹名称。
+GroupNameTooLong=文件夹名称或路径太长。
+InvalidGroupName=文件夹名称无效。
+BadGroupName=文件夹名称不能包含下列任何字符：%n%n%1
+NoProgramGroupCheck2=不创建开始菜单文件夹(&D)
 
 ; *** "Ready to Install" wizard page
-WizardReady=鍑嗗瀹夎
-ReadyLabel1=瀹夎绋嬪簭鍑嗗灏辩华锛岀幇鍦ㄥ彲浠ュ紑濮嬪畨瑁?[name] 鍒版偍鐨勮绠楁満銆?
-ReadyLabel2a=鐐瑰嚮鈥滃畨瑁呪€濈户缁瀹夎绋嬪簭銆傚鏋滄偍鎯抽噸鏂版煡鐪嬫垨淇敼浠讳綍璁剧疆锛岀偣鍑烩€滀笂涓€姝モ€濄€?
-ReadyLabel2b=鐐瑰嚮鈥滃畨瑁呪€濈户缁瀹夎绋嬪簭銆?
-ReadyMemoUserInfo=鐢ㄦ埛淇℃伅锛?
-ReadyMemoDir=鐩爣浣嶇疆锛?
-ReadyMemoType=瀹夎绫诲瀷锛?
-ReadyMemoComponents=宸查€夋嫨缁勪欢锛?
-ReadyMemoGroup=寮€濮嬭彍鍗曟枃浠跺す锛?
-ReadyMemoTasks=闄勫姞浠诲姟锛?
+WizardReady=准备安装
+ReadyLabel1=安装程序准备就绪，现在可以开始安装 [name] 到您的计算机。
+ReadyLabel2a=点击“安装”继续此安装程序。如果您想重新查看或修改任何设置，点击“上一步”。
+ReadyLabel2b=点击“安装”继续此安装程序。
+ReadyMemoUserInfo=用户信息：
+ReadyMemoDir=目标位置：
+ReadyMemoType=安装类型：
+ReadyMemoComponents=已选择组件：
+ReadyMemoGroup=开始菜单文件夹：
+ReadyMemoTasks=附加任务：
 
 ; *** TDownloadWizardPage wizard page and DownloadTemporaryFile
-DownloadingLabel2=姝ｅ湪涓嬭浇鏂囦欢...
-ButtonStopDownload=鍋滄涓嬭浇(&S)
-StopDownload=鎮ㄧ‘瀹氳鍋滄涓嬭浇鍚楋紵
-ErrorDownloadAborted=涓嬭浇宸蹭腑姝€?
-ErrorDownloadFailed=涓嬭浇澶辫触锛?1 %2銆?
-ErrorDownloadSizeFailed=鑾峰彇澶у皬澶辫触锛?1 %2銆?
-ErrorProgress=鏃犳晥鐨勮繘搴︼細%1 / %2銆?
-ErrorFileSize=鏂囦欢澶у皬閿欒锛氶鏈?%1锛屽疄闄?%2銆?
+DownloadingLabel2=正在下载文件...
+ButtonStopDownload=停止下载(&S)
+StopDownload=您确定要停止下载吗？
+ErrorDownloadAborted=下载已中止。
+ErrorDownloadFailed=下载失败：%1 %2。
+ErrorDownloadSizeFailed=获取大小失败：%1 %2。
+ErrorProgress=无效的进度：%1 / %2。
+ErrorFileSize=文件大小错误：预期 %1，实际 %2。
 
 ; *** TExtractionWizardPage wizard page and ExtractArchive
-ExtractingLabel=姝ｅ湪鎻愬彇鏂囦欢...
-ButtonStopExtraction=鍋滄鎻愬彇(&S)
-StopExtraction=鎮ㄧ‘瀹氳鍋滄鎻愬彇鍚楋紵
-ErrorExtractionAborted=鎻愬彇宸蹭腑姝€?
-ErrorExtractionFailed=鎻愬彇澶辫触锛?1
+ExtractingLabel=正在提取文件...
+ButtonStopExtraction=停止提取(&S)
+StopExtraction=您确定要停止提取吗？
+ErrorExtractionAborted=提取已中止。
+ErrorExtractionFailed=提取失败：%1
 
 ; *** Archive extraction failure details
-ArchiveIncorrectPassword=瀵嗙爜涓嶆纭€?
-ArchiveIsCorrupted=鍘嬬缉鍖呭凡鎹熷潖銆?
-ArchiveUnsupportedFormat=涓嶆敮鎸佺殑鍘嬬缉鍖呮牸寮忋€?
+ArchiveIncorrectPassword=密码不正确。
+ArchiveIsCorrupted=压缩包已损坏。
+ArchiveUnsupportedFormat=不支持的压缩包格式。
 
 ; *** "Preparing to Install" wizard page
-WizardPreparing=姝ｅ湪鍑嗗瀹夎
-PreparingDesc=瀹夎绋嬪簭姝ｅ湪鍑嗗瀹夎 [name] 鍒版偍鐨勮绠楁満銆?
-PreviousInstallNotCompleted=鍏堝墠鐨勭▼搴忓畨瑁呮垨鍗歌浇鏈畬鎴愶紝闇€瑕佹偍閲嶅惎璁＄畻鏈轰互瀹屾垚璇ュ畨瑁呫€?n%n鍦ㄩ噸鍚绠楁満鍚庯紝鍐嶆杩愯瀹夎绋嬪簭浠ュ畬鎴?[name] 鐨勫畨瑁呫€?
-CannotContinue=瀹夎绋嬪簭涓嶈兘缁х画銆傝鐐瑰嚮鈥滃彇娑堚€濋€€鍑恒€?
-ApplicationsFound=浠ヤ笅搴旂敤绋嬪簭姝ｅ湪浣跨敤灏嗙敱瀹夎绋嬪簭鏇存柊鐨勬枃浠躲€傚缓璁偍鍏佽瀹夎绋嬪簭鑷姩鍏抽棴杩欎簺搴旂敤绋嬪簭銆?
-ApplicationsFound2=浠ヤ笅搴旂敤绋嬪簭姝ｅ湪浣跨敤灏嗙敱瀹夎绋嬪簭鏇存柊鐨勬枃浠躲€傚缓璁偍鍏佽瀹夎绋嬪簭鑷姩鍏抽棴杩欎簺搴旂敤绋嬪簭銆傚畨瑁呭畬鎴愬悗锛屽畨瑁呯▼搴忓皢灏濊瘯閲嶆柊鍚姩杩欎簺搴旂敤绋嬪簭銆?
-CloseApplications=鑷姩鍏抽棴搴旂敤绋嬪簭(&A)
-DontCloseApplications=涓嶈鍏抽棴搴旂敤绋嬪簭(&D)
-ErrorCloseApplications=瀹夎绋嬪簭鏃犳硶鑷姩鍏抽棴鎵€鏈夊簲鐢ㄧ▼搴忋€傚缓璁偍鍦ㄧ户缁箣鍓嶏紝鍏抽棴鎵€鏈夊湪浣跨敤闇€瑕佺敱瀹夎绋嬪簭鏇存柊鐨勬枃浠剁殑搴旂敤绋嬪簭銆?
-PrepareToInstallNeedsRestart=瀹夎绋嬪簭蹇呴』閲嶅惎鎮ㄧ殑璁＄畻鏈恒€傝绠楁満閲嶅惎鍚庯紝璇峰啀娆¤繍琛屽畨瑁呯▼搴忎互瀹屾垚 [name] 鐨勫畨瑁呫€?n%n瑕佺珛鍗抽噸鍚悧锛?
+WizardPreparing=正在准备安装
+PreparingDesc=安装程序正在准备安装 [name] 到您的计算机。
+PreviousInstallNotCompleted=先前的程序安装或卸载未完成，需要您重启计算机以完成该安装。%n%n在重启计算机后，再次运行安装程序以完成 [name] 的安装。
+CannotContinue=安装程序不能继续。请点击“取消”退出。
+ApplicationsFound=以下应用程序正在使用将由安装程序更新的文件。建议您允许安装程序自动关闭这些应用程序。
+ApplicationsFound2=以下应用程序正在使用将由安装程序更新的文件。建议您允许安装程序自动关闭这些应用程序。安装完成后，安装程序将尝试重新启动这些应用程序。
+CloseApplications=自动关闭应用程序(&A)
+DontCloseApplications=不要关闭应用程序(&D)
+ErrorCloseApplications=安装程序无法自动关闭所有应用程序。建议您在继续之前，关闭所有在使用需要由安装程序更新的文件的应用程序。
+PrepareToInstallNeedsRestart=安装程序必须重启您的计算机。计算机重启后，请再次运行安装程序以完成 [name] 的安装。%n%n要立即重启吗？
 
 ; *** "Installing" wizard page
-WizardInstalling=姝ｅ湪瀹夎
-InstallingLabel=瀹夎绋嬪簭姝ｅ湪瀹夎 [name] 鍒版偍鐨勮绠楁満锛岃绋嶅€欍€?
+WizardInstalling=正在安装
+InstallingLabel=安装程序正在安装 [name] 到您的计算机，请稍候。
 
 ; *** "Setup Completed" wizard page
-FinishedHeadingLabel=瀹屾垚 [name] 瀹夎鍚戝
-FinishedLabelNoIcons=瀹夎绋嬪簭宸插湪鎮ㄧ殑璁＄畻鏈轰腑瀹夎浜?[name]銆?
-FinishedLabel=瀹夎绋嬪簭宸插湪鎮ㄧ殑璁＄畻鏈轰腑瀹夎浜?[name]銆傛偍鍙互閫氳繃宸插畨瑁呯殑蹇嵎鏂瑰紡杩愯姝ゅ簲鐢ㄧ▼搴忋€?
-ClickFinish=鐐瑰嚮鈥滃畬鎴愨€濋€€鍑哄畨瑁呯▼搴忋€?
-FinishedRestartLabel=涓哄畬鎴?[name] 鐨勫畨瑁咃紝瀹夎绋嬪簭蹇呴』閲嶆柊鍚姩鎮ㄧ殑璁＄畻鏈恒€傝绔嬪嵆閲嶅惎鍚楋紵
-FinishedRestartMessage=涓哄畬鎴?[name] 鐨勫畨瑁咃紝瀹夎绋嬪簭蹇呴』閲嶆柊鍚姩鎮ㄧ殑璁＄畻鏈恒€?n%n瑕佺珛鍗抽噸鍚悧锛?
-ShowReadmeCheck=鏄紝鎴戞兂鏌ラ槄鑷堪鏂囦欢
-YesRadio=鏄紝绔嬪嵆閲嶅惎璁＄畻鏈?&Y)
-NoRadio=鍚︼紝绋嶅悗閲嶅惎璁＄畻鏈?&N)
+FinishedHeadingLabel=完成 [name] 安装向导
+FinishedLabelNoIcons=安装程序已在您的计算机中安装了 [name]。
+FinishedLabel=安装程序已在您的计算机中安装了 [name]。您可以通过已安装的快捷方式运行此应用程序。
+ClickFinish=点击“完成”退出安装程序。
+FinishedRestartLabel=为完成 [name] 的安装，安装程序必须重新启动您的计算机。要立即重启吗？
+FinishedRestartMessage=为完成 [name] 的安装，安装程序必须重新启动您的计算机。%n%n要立即重启吗？
+ShowReadmeCheck=是，我想查阅自述文件
+YesRadio=是，立即重启计算机(&Y)
+NoRadio=否，稍后重启计算机(&N)
 ; used for example as 'Run MyProg.exe'
-RunEntryExec=杩愯 %1
+RunEntryExec=运行 %1
 ; used for example as 'View Readme.txt'
-RunEntryShellExec=鏌ラ槄 %1
+RunEntryShellExec=查阅 %1
 
 ; *** "Setup Needs the Next Disk" stuff
-ChangeDiskTitle=瀹夎绋嬪簭闇€瑕佷笅涓€寮犵鐩?
-SelectDiskLabel2=璇锋彃鍏ョ鐩?%1 骞剁偣鍑烩€滅‘瀹氣€濄€?n%n濡傛灉杩欎釜纾佺洏涓殑鏂囦欢鍙互鍦ㄤ笅鍒楁枃浠跺す涔嬪鐨勬枃浠跺す涓壘鍒帮紝璇疯緭鍏ユ纭殑璺緞鎴栫偣鍑烩€滄祻瑙堚€濄€?
-PathLabel=璺緞(&P)锛?
-FileNotInDir2=鈥?2鈥濅腑鎵句笉鍒版枃浠垛€?1鈥濄€傝鎻掑叆姝ｇ‘鐨勭鐩樻垨閫夋嫨鍏朵粬鏂囦欢澶广€?
-SelectDirectoryLabel=璇锋寚瀹氫笅涓€寮犵鐩樼殑浣嶇疆銆?
+ChangeDiskTitle=安装程序需要下一张磁盘
+SelectDiskLabel2=请插入磁盘 %1 并点击“确定”。%n%n如果这个磁盘中的文件可以在下列文件夹之外的文件夹中找到，请输入正确的路径或点击“浏览”。
+PathLabel=路径(&P)：
+FileNotInDir2=“%2”中找不到文件“%1”。请插入正确的磁盘或选择其他文件夹。
+SelectDirectoryLabel=请指定下一张磁盘的位置。
 
 ; *** Installation phase messages
-SetupAborted=瀹夎绋嬪簭鏈畬鎴愬畨瑁呫€?n%n璇蜂慨姝ｈ繖涓棶棰樺苟閲嶆柊杩愯瀹夎绋嬪簭銆?
-AbortRetryIgnoreSelectAction=閫夋嫨鎿嶄綔
-AbortRetryIgnoreRetry=閲嶈瘯(&T)
-AbortRetryIgnoreIgnore=蹇界暐閿欒骞剁户缁?&I)
-AbortRetryIgnoreCancel=鍙栨秷瀹夎
-RetryCancelSelectAction=閫夋嫨鎿嶄綔
-RetryCancelRetry=閲嶈瘯(&T)
-RetryCancelCancel=鍙栨秷
+SetupAborted=安装程序未完成安装。%n%n请修正这个问题并重新运行安装程序。
+AbortRetryIgnoreSelectAction=选择操作
+AbortRetryIgnoreRetry=重试(&T)
+AbortRetryIgnoreIgnore=忽略错误并继续(&I)
+AbortRetryIgnoreCancel=取消安装
+RetryCancelSelectAction=选择操作
+RetryCancelRetry=重试(&T)
+RetryCancelCancel=取消
 
 ; *** Installation status messages
-StatusClosingApplications=姝ｅ湪鍏抽棴搴旂敤绋嬪簭...
-StatusCreateDirs=姝ｅ湪鍒涘缓鐩綍...
-StatusExtractFiles=姝ｅ湪鎻愬彇鏂囦欢...
-StatusDownloadFiles=姝ｅ湪涓嬭浇鏂囦欢...
-StatusCreateIcons=姝ｅ湪鍒涘缓蹇嵎鏂瑰紡...
-StatusCreateIniEntries=姝ｅ湪鍒涘缓 INI 鏉＄洰...
-StatusCreateRegistryEntries=姝ｅ湪鍒涘缓娉ㄥ唽琛ㄦ潯鐩?..
-StatusRegisterFiles=姝ｅ湪娉ㄥ唽鏂囦欢...
-StatusSavingUninstall=姝ｅ湪淇濆瓨鍗歌浇淇℃伅...
-StatusRunProgram=姝ｅ湪瀹屾垚瀹夎...
-StatusRestartingApplications=姝ｅ湪閲嶅惎搴旂敤绋嬪簭...
-StatusRollback=姝ｅ湪鎾ら攢鏇存敼...
+StatusClosingApplications=正在关闭应用程序...
+StatusCreateDirs=正在创建目录...
+StatusExtractFiles=正在提取文件...
+StatusDownloadFiles=正在下载文件...
+StatusCreateIcons=正在创建快捷方式...
+StatusCreateIniEntries=正在创建 INI 条目...
+StatusCreateRegistryEntries=正在创建注册表条目...
+StatusRegisterFiles=正在注册文件...
+StatusSavingUninstall=正在保存卸载信息...
+StatusRunProgram=正在完成安装...
+StatusRestartingApplications=正在重启应用程序...
+StatusRollback=正在撤销更改...
 
 ; *** Misc. errors
-ErrorInternal2=鍐呴儴閿欒锛?1銆?
-ErrorFunctionFailedNoCode=%1 澶辫触銆?
-ErrorFunctionFailed=%1 澶辫触锛涢敊璇唬鐮?%2銆?
-ErrorFunctionFailedWithMessage=%1 澶辫触锛涢敊璇唬鐮?%2銆?n%3
-ErrorExecutingProgram=鏃犳硶鎵ц鏂囦欢锛?n%1
+ErrorInternal2=内部错误：%1。
+ErrorFunctionFailedNoCode=%1 失败。
+ErrorFunctionFailed=%1 失败；错误代码 %2。
+ErrorFunctionFailedWithMessage=%1 失败；错误代码 %2。%n%3
+ErrorExecutingProgram=无法执行文件：%n%1
 
 ; *** Registry errors
-ErrorRegOpenKey=鎵撳紑娉ㄥ唽琛ㄩ」鏃跺嚭閿欙細%n%1\%2
-ErrorRegCreateKey=鍒涘缓娉ㄥ唽琛ㄩ」鏃跺嚭閿欙細%n%1\%2
-ErrorRegWriteKey=鍐欏叆娉ㄥ唽琛ㄩ」鏃跺嚭閿欙細%n%1\%2
+ErrorRegOpenKey=打开注册表项时出错：%n%1\%2
+ErrorRegCreateKey=创建注册表项时出错：%n%1\%2
+ErrorRegWriteKey=写入注册表项时出错：%n%1\%2
 
 ; *** INI errors
-ErrorIniEntry=鍦ㄦ枃浠垛€?1鈥濅腑鍒涘缓 INI 鏉＄洰鏃跺嚭閿欍€?
+ErrorIniEntry=在文件“%1”中创建 INI 条目时出错。
 
 ; *** File copying errors
-FileAbortRetryIgnoreSkipNotRecommended=璺宠繃姝ゆ枃浠?&S)锛堜笉鎺ㄨ崘锛?
-FileAbortRetryIgnoreIgnoreNotRecommended=蹇界暐閿欒骞剁户缁?&I)锛堜笉鎺ㄨ崘锛?
-SourceIsCorrupted=婧愭枃浠跺凡鎹熷潖銆?
-SourceDoesntExist=婧愭枃浠垛€?1鈥濅笉瀛樺湪銆?
-SourceVerificationFailed=婧愭枃浠堕獙璇佸け璐ワ細%1
-VerificationSignatureDoesntExist=绛惧悕鏂囦欢鈥?1鈥濅笉瀛樺湪銆?
-VerificationSignatureInvalid=绛惧悕鏂囦欢鈥?1鈥濇棤鏁堛€?
-VerificationKeyNotFound=绛惧悕鏂囦欢鈥?1鈥濅娇鐢ㄤ簡鏈煡鐨勫瘑閽ャ€?
-VerificationFileNameIncorrect=鏂囦欢鍚嶄笉姝ｇ‘銆?
-VerificationFileTagIncorrect=鏂囦欢鏍囩涓嶆纭€?
-VerificationFileSizeIncorrect=鏂囦欢澶у皬涓嶆纭€?
-VerificationFileHashIncorrect=鏂囦欢鍝堝笇鍊间笉姝ｇ‘銆?
-ExistingFileReadOnly2=鏃犳硶鏇挎崲宸插瓨鍦ㄧ殑鏂囦欢锛屽畠鏄彧璇荤殑銆?
-ExistingFileReadOnlyRetry=绉婚櫎鍙灞炴€у苟閲嶈瘯(&R)
-ExistingFileReadOnlyKeepExisting=淇濈暀宸插瓨鍦ㄧ殑鏂囦欢(&K)
-ErrorReadingExistingDest=灏濊瘯璇诲彇宸插瓨鍦ㄧ殑鏂囦欢鏃跺嚭閿欙細
-FileExistsSelectAction=閫夋嫨鎿嶄綔
-FileExists2=鏂囦欢宸茬粡瀛樺湪銆?
-FileExistsOverwriteExisting=瑕嗙洊宸插瓨鍦ㄧ殑鏂囦欢(&O)
-FileExistsKeepExisting=淇濈暀宸插瓨鍦ㄧ殑鏂囦欢(&K)
-FileExistsOverwriteOrKeepAll=涓烘帴涓嬫潵鐨勫啿绐佹枃浠舵墽琛屾鎿嶄綔(&D)
-ExistingFileNewerSelectAction=閫夋嫨鎿嶄綔
-ExistingFileNewer2=宸插瓨鍦ㄧ殑鏂囦欢姣斿畨瑁呯▼搴忓皢瑕佸畨瑁呯殑鏂囦欢杩樿鏂般€?
-ExistingFileNewerOverwriteExisting=瑕嗙洊宸插瓨鍦ㄧ殑鏂囦欢(&O)
-ExistingFileNewerKeepExisting=淇濈暀宸插瓨鍦ㄧ殑鏂囦欢(&K)锛堟帹鑽愶級
-ExistingFileNewerOverwriteOrKeepAll=涓烘帴涓嬫潵鐨勫啿绐佹枃浠舵墽琛屾鎿嶄綔(&D)
-ErrorChangingAttr=灏濊瘯鏇存敼涓嬪垪宸插瓨鍦ㄧ殑鏂囦欢灞炴€ф椂鍑洪敊锛?
-ErrorCreatingTemp=灏濊瘯鍦ㄧ洰鏍囩洰褰曞垱寤烘枃浠舵椂鍑洪敊锛?
-ErrorReadingSource=灏濊瘯璇诲彇涓嬪垪婧愭枃浠舵椂鍑洪敊锛?
-ErrorCopying=灏濊瘯澶嶅埗涓嬪垪鏂囦欢鏃跺嚭閿欙細
-ErrorDownloading=灏濊瘯涓嬭浇鏂囦欢鏃跺嚭閿欙細
-ErrorExtracting=灏濊瘯鎻愬彇鍘嬬缉鍖呮椂鍑洪敊锛?
-ErrorReplacingExistingFile=灏濊瘯鏇挎崲宸插瓨鍦ㄧ殑鏂囦欢鏃跺嚭閿欙細
-ErrorRestartReplace=閲嶅惎骞舵浛鎹㈠け璐ワ細
-ErrorRenamingTemp=灏濊瘯閲嶅懡鍚嶄笅鍒楃洰鏍囩洰褰曚腑鐨勪竴涓枃浠舵椂鍑洪敊锛?
-ErrorRegisterServer=鏃犳硶娉ㄥ唽 DLL/OCX锛?1
-ErrorRegSvr32Failed=RegSvr32 澶辫触锛涢€€鍑轰唬鐮?%1銆?
-ErrorRegisterTypeLib=鏃犳硶娉ㄥ唽绫诲瀷搴擄細%1
+FileAbortRetryIgnoreSkipNotRecommended=跳过此文件(&S)（不推荐）
+FileAbortRetryIgnoreIgnoreNotRecommended=忽略错误并继续(&I)（不推荐）
+SourceIsCorrupted=源文件已损坏。
+SourceDoesntExist=源文件“%1”不存在。
+SourceVerificationFailed=源文件验证失败：%1
+VerificationSignatureDoesntExist=签名文件“%1”不存在。
+VerificationSignatureInvalid=签名文件“%1”无效。
+VerificationKeyNotFound=签名文件“%1”使用了未知的密钥。
+VerificationFileNameIncorrect=文件名不正确。
+VerificationFileTagIncorrect=文件标签不正确。
+VerificationFileSizeIncorrect=文件大小不正确。
+VerificationFileHashIncorrect=文件哈希值不正确。
+ExistingFileReadOnly2=无法替换已存在的文件，它是只读的。
+ExistingFileReadOnlyRetry=移除只读属性并重试(&R)
+ExistingFileReadOnlyKeepExisting=保留已存在的文件(&K)
+ErrorReadingExistingDest=尝试读取已存在的文件时出错：
+FileExistsSelectAction=选择操作
+FileExists2=文件已经存在。
+FileExistsOverwriteExisting=覆盖已存在的文件(&O)
+FileExistsKeepExisting=保留已存在的文件(&K)
+FileExistsOverwriteOrKeepAll=为接下来的冲突文件执行此操作(&D)
+ExistingFileNewerSelectAction=选择操作
+ExistingFileNewer2=已存在的文件比安装程序将要安装的文件还要新。
+ExistingFileNewerOverwriteExisting=覆盖已存在的文件(&O)
+ExistingFileNewerKeepExisting=保留已存在的文件(&K)（推荐）
+ExistingFileNewerOverwriteOrKeepAll=为接下来的冲突文件执行此操作(&D)
+ErrorChangingAttr=尝试更改下列已存在的文件属性时出错：
+ErrorCreatingTemp=尝试在目标目录创建文件时出错：
+ErrorReadingSource=尝试读取下列源文件时出错：
+ErrorCopying=尝试复制下列文件时出错：
+ErrorDownloading=尝试下载文件时出错：
+ErrorExtracting=尝试提取压缩包时出错：
+ErrorReplacingExistingFile=尝试替换已存在的文件时出错：
+ErrorRestartReplace=重启并替换失败：
+ErrorRenamingTemp=尝试重命名下列目标目录中的一个文件时出错：
+ErrorRegisterServer=无法注册 DLL/OCX：%1
+ErrorRegSvr32Failed=RegSvr32 失败；退出代码 %1。
+ErrorRegisterTypeLib=无法注册类型库：%1
 
 ; *** Uninstall display name markings
 ; used for example as 'My Program (32-bit)'
 UninstallDisplayNameMark=%1 (%2)
 ; used for example as 'My Program (32-bit, All users)'
 UninstallDisplayNameMarks=%1 (%2, %3)
-UninstallDisplayNameMark32Bit=32 浣?
-UninstallDisplayNameMark64Bit=64 浣?
-UninstallDisplayNameMarkAllUsers=鎵€鏈夌敤鎴?
-UninstallDisplayNameMarkCurrentUser=褰撳墠鐢ㄦ埛
+UninstallDisplayNameMark32Bit=32 位
+UninstallDisplayNameMark64Bit=64 位
+UninstallDisplayNameMarkAllUsers=所有用户
+UninstallDisplayNameMarkCurrentUser=当前用户
 
 ; *** Post-installation errors
-ErrorOpeningReadme=灏濊瘯鎵撳紑鑷堪鏂囦欢鏃跺嚭閿欍€?
-ErrorRestartingComputer=瀹夎绋嬪簭鏃犳硶閲嶅惎璁＄畻鏈猴紝璇锋墜鍔ㄩ噸鍚€?
+ErrorOpeningReadme=尝试打开自述文件时出错。
+ErrorRestartingComputer=安装程序无法重启计算机，请手动重启。
 
 ; *** Uninstaller messages
-UninstallNotFound=鏂囦欢鈥?1鈥濅笉瀛樺湪銆傛棤娉曞嵏杞姐€?
-UninstallOpenError=鏂囦欢鈥?1鈥濅笉鑳借鎵撳紑銆傛棤娉曞嵏杞?
-UninstallUnsupportedVer=姝ょ増鏈殑鍗歌浇绋嬪簭鏃犳硶璇嗗埆鍗歌浇鏃ュ織鏂囦欢鈥?1鈥濈殑鏍煎紡銆傛棤娉曞嵏杞姐€?
-UninstallUnknownEntry=鍗歌浇鏃ュ織涓亣鍒颁竴涓湭鐭ユ潯鐩紙%1锛夈€?
-ConfirmUninstall=鎮ㄧ‘璁よ瀹屽叏绉婚櫎 %1 鍙婂叾鎵€鏈夌粍浠跺悧锛?
-UninstallOnlyOnWin64=浠呭厑璁稿湪 64 浣?Windows 涓嵏杞芥绋嬪簭銆?
-OnlyAdminCanUninstall=浠呬娇鐢ㄧ鐞嗗憳鏉冮檺鐨勭敤鎴疯兘瀹屾垚姝ゅ嵏杞姐€?
-UninstallStatusLabel=姝ｅ湪浠庢偍鐨勮绠楁満涓Щ闄?%1锛岃绋嶅€欍€?
-UninstalledAll=宸查『鍒╀粠鎮ㄧ殑璁＄畻鏈轰腑绉婚櫎 %1銆?
-UninstalledMost=%1 鍗歌浇瀹屾垚銆?n%n鏈夐儴鍒嗗唴瀹规湭鑳借鍒犻櫎锛屼絾鎮ㄥ彲浠ユ墜鍔ㄥ垹闄ゅ畠浠€?
-UninstalledAndNeedsRestart=涓哄畬鎴?%1 鐨勫嵏杞斤紝闇€瑕侀噸鍚偍鐨勮绠楁満銆?n%n瑕佺珛鍗抽噸鍚悧锛?
-UninstallDataCorrupted=鏂囦欢鈥?1鈥濆凡鎹熷潖銆傛棤娉曞嵏杞姐€?
+UninstallNotFound=文件“%1”不存在。无法卸载。
+UninstallOpenError=文件“%1”不能被打开。无法卸载
+UninstallUnsupportedVer=此版本的卸载程序无法识别卸载日志文件“%1”的格式。无法卸载。
+UninstallUnknownEntry=卸载日志中遇到一个未知条目（%1）。
+ConfirmUninstall=您确认要完全移除 %1 及其所有组件吗？
+UninstallOnlyOnWin64=仅允许在 64 位 Windows 中卸载此程序。
+OnlyAdminCanUninstall=仅使用管理员权限的用户能完成此卸载。
+UninstallStatusLabel=正在从您的计算机中移除 %1，请稍候。
+UninstalledAll=已顺利从您的计算机中移除 %1。
+UninstalledMost=%1 卸载完成。%n%n有部分内容未能被删除，但您可以手动删除它们。
+UninstalledAndNeedsRestart=为完成 %1 的卸载，需要重启您的计算机。%n%n要立即重启吗？
+UninstallDataCorrupted=文件“%1”已损坏。无法卸载。
 
 ; *** Uninstallation phase messages
-ConfirmDeleteSharedFileTitle=鍒犻櫎鍏变韩鏂囦欢锛?
-ConfirmDeleteSharedFile2=绯荤粺琛ㄧず涓嬪垪鍏变韩鏂囦欢宸蹭笉鍐嶆湁浠讳綍绋嬪簭浣跨敤銆傛偍甯屾湜鍗歌浇绋嬪簭鍒犻櫎姝ゅ叡浜枃浠跺悧锛?n%n濡傛灉浠嶆湁绋嬪簭姝ｅ湪浣跨敤姝ゆ枃浠讹紝鍒犻櫎鍚庤繖浜涚▼搴忓彲鑳芥棤娉曟甯歌繍琛屻€傚鏋滄偍涓嶈兘纭畾锛岃閫夋嫨鈥滃惁鈥濓紝淇濈暀姝ゆ枃浠跺湪绯荤粺涓笉浼氶€犳垚浠讳綍鎹熷銆?
-SharedFileNameLabel=鏂囦欢鍚嶏細
-SharedFileLocationLabel=浣嶇疆锛?
-WizardUninstalling=鍗歌浇鐘舵€?
-StatusUninstalling=姝ｅ湪鍗歌浇 %1...
+ConfirmDeleteSharedFileTitle=删除共享文件？
+ConfirmDeleteSharedFile2=系统表示下列共享文件已不再有任何程序使用。您希望卸载程序删除此共享文件吗？%n%n如果仍有程序正在使用此文件，删除后这些程序可能无法正常运行。如果您不能确定，请选择“否”，保留此文件在系统中不会造成任何损害。
+SharedFileNameLabel=文件名：
+SharedFileLocationLabel=位置：
+WizardUninstalling=卸载状态
+StatusUninstalling=正在卸载 %1...
 
 ; *** Shutdown block reasons
-ShutdownBlockReasonInstallingApp=姝ｅ湪瀹夎 %1銆?
-ShutdownBlockReasonUninstallingApp=姝ｅ湪鍗歌浇 %1銆?
+ShutdownBlockReasonInstallingApp=正在安装 %1。
+ShutdownBlockReasonUninstallingApp=正在卸载 %1。
 
 ; The custom messages below aren't used by Setup itself, but if you make
 ; use of them in your scripts, you'll want to translate them.
 
 [CustomMessages]
 
-NameAndVersion=%1 鐗堟湰 %2
-AdditionalIcons=闄勫姞蹇嵎鏂瑰紡锛?
-CreateDesktopIcon=鍒涘缓妗岄潰蹇嵎鏂瑰紡(&D)
-CreateQuickLaunchIcon=鍒涘缓蹇€熷惎鍔ㄦ爮蹇嵎鏂瑰紡(&Q)
-ProgramOnTheWeb=%1 缃戠珯
-UninstallProgram=鍗歌浇 %1
-LaunchProgram=杩愯 %1
-AssocFileExtension=灏?%2 鏂囦欢鎵╁睍鍚嶄笌 %1 寤虹珛鍏宠仈(&A)
-AssocingFileExtension=姝ｅ湪灏?%2 鏂囦欢鎵╁睍鍚嶄笌 %1 寤虹珛鍏宠仈...
-AutoStartProgramGroupDescription=鍚姩锛?
-AutoStartProgram=鑷姩鍚姩 %1
-AddonHostProgramNotFound=鎮ㄩ€夋嫨鐨勬枃浠跺す涓棤娉曟壘鍒?%1銆?n%n鎮ㄧ‘瀹氳缁х画鍚楋紵
+NameAndVersion=%1 版本 %2
+AdditionalIcons=附加快捷方式：
+CreateDesktopIcon=创建桌面快捷方式(&D)
+CreateQuickLaunchIcon=创建快速启动栏快捷方式(&Q)
+ProgramOnTheWeb=%1 网站
+UninstallProgram=卸载 %1
+LaunchProgram=运行 %1
+AssocFileExtension=将 %2 文件扩展名与 %1 建立关联(&A)
+AssocingFileExtension=正在将 %2 文件扩展名与 %1 建立关联...
+AutoStartProgramGroupDescription=启动：
+AutoStartProgram=自动启动 %1
+AddonHostProgramNotFound=您选择的文件夹中无法找到 %1。%n%n您确定要继续吗？
