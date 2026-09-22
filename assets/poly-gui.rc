@@ -1,0 +1,29 @@
+// poly-gui.exe 的图标与版本信息（窗口版）。同样需要 windres --codepage=65001。
+
+1 ICON "icon.ico"
+
+1 VERSIONINFO
+FILEVERSION    0,1,0,0
+PRODUCTVERSION 0,1,0,0
+FILEOS         0x40004
+FILETYPE       0x1
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "CompanyName",      "Niobium-41-nb"
+      VALUE "FileDescription",  "poly 出题工作台（窗口界面）"
+      VALUE "FileVersion",      "0.1.0"
+      VALUE "InternalName",     "poly-gui"
+      VALUE "LegalCopyright",   "Copyright (C) 2026 Niobium-41-nb. 内置 testlib.h 版权归 Mike Mirzayanov 所有。"
+      VALUE "OriginalFilename", "poly-gui.exe"
+      VALUE "ProductName",      "poly 出题工作台"
+      VALUE "ProductVersion",   "0.1.0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 1200
+  END
+END

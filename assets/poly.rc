@@ -1,0 +1,31 @@
+// poly.exe 的图标与版本信息。用 windres 编译时需带 --codepage=65001，
+// 因为下面有中文字符串（见 Makefile）。
+// 注意：VERSIONINFO 的资源 ID 必须写 1（写成字符串名字会让 GetFileVersionInfoSize 返回 0）。
+
+1 ICON "icon.ico"
+
+1 VERSIONINFO
+FILEVERSION    0,1,0,0
+PRODUCTVERSION 0,1,0,0
+FILEOS         0x40004
+FILETYPE       0x1
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "CompanyName",      "Niobium-41-nb"
+      VALUE "FileDescription",  "poly 出题工作台（命令行）"
+      VALUE "FileVersion",      "0.1.0"
+      VALUE "InternalName",     "poly"
+      VALUE "LegalCopyright",   "Copyright (C) 2026 Niobium-41-nb. 内置 testlib.h 版权归 Mike Mirzayanov 所有。"
+      VALUE "OriginalFilename", "poly.exe"
+      VALUE "ProductName",      "poly 出题工作台"
+      VALUE "ProductVersion",   "0.1.0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 1200
+  END
+END

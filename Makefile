@@ -44,6 +44,17 @@ CONSOLE_OBJS := $(filter-out $(BUILDDIR)/gui_main.o,$(OBJS))
 GUI_OBJS     := $(filter-out $(BUILDDIR)/main.o,$(OBJS))
 EMBED := $(SRCDIR)/testlib_embed.inc
 
+# 图标 / 版本信息（assets/*.rc 用 windres 编译）；windres 不在时自动跳过，仍能构建
+CONSOLE_RES :=
+GUI_RES     :=
+ifeq ($(IS_WIN),1)
+WINDRES := $(shell command -v windres 2>/dev/null)
+ifneq ($(WINDRES),)
+CONSOLE_RES := $(BUILDDIR)/poly_res.o
+GUI_RES     := $(BUILDDIR)/poly-gui_res.o
+endif
+endif
+
 ifeq ($(IS_WIN),1)
 # ws2_32：poly ui --web 的本地 HTTP 服务（Winsock）
 # gdi32/comctl32/comdlg32：窗口版界面（控制台版也链它，因为 poly ui 可以就地开窗）
@@ -57,18 +68,24 @@ else
 all: $(TARGET)
 endif
 
-$(TARGET): $(CONSOLE_OBJS)
+$(TARGET): $(CONSOLE_OBJS) $(CONSOLE_RES)
 	@mkdir -p $(dir $@)
-	$(CXX) $(CONSOLE_OBJS) -o $@ $(LDFLAGS)
+	$(CXX) $(CONSOLE_OBJS) $(CONSOLE_RES) -o $@ $(LDFLAGS)
 	@echo "built $@"
 
 # 窗口版（仅 Windows）：GUI 子系统，运行时不弹控制台窗口
 ifeq ($(IS_WIN),1)
-$(GUI_TARGET): $(GUI_OBJS)
+$(GUI_TARGET): $(GUI_OBJS) $(GUI_RES)
 	@mkdir -p $(dir $@)
-	$(CXX) $(GUI_OBJS) -o $@ -mwindows $(LDFLAGS)
+	$(CXX) $(GUI_OBJS) $(GUI_RES) -o $@ -mwindows $(LDFLAGS)
 	@echo "built $@"
 endif
+
+# 资源文件：中文串必须 --codepage=65001，否则按 ANSI 读成乱码
+$(BUILDDIR)/%_res.o: assets/%.rc assets/icon.ico
+	@mkdir -p $(dir $@)
+	$(WINDRES) --codepage=65001 -i $< -o $@
+	@echo "built $@"
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
 	@mkdir -p $(dir $@)

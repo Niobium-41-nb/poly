@@ -1,5 +1,12 @@
+# 构建产物
 build/
 bin/
+dist/
+
+# 工作区数据（题目、测试点、评测产物）
 problems/
+.tmp/
+
+# 临时文件
 *.zip
 *.log

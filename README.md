@@ -22,6 +22,35 @@ poly ui                                    # 启动本地出题工作台（浏�
 
 ---
 
+## 0. 安装
+
+**Windows 安装包**（推荐）：在 [Releases](https://github.com/Niobium-41-nb/poly/releases) 里下载
+`poly-<版本>-setup.exe`，双击安装。安装是**用户级、免管理员**的：
+
+| 项目 | 说明 |
+| --- | --- |
+| 安装目录 | `%LOCALAPPDATA%\Programs\poly`（卸载时整个删掉） |
+| 组件 | `poly.exe`（命令行）、`poly-gui.exe`（窗口界面）、`testlib\testlib.h`、`README.md` |
+| 可选任务 | 把安装目录加入用户 `PATH`（默认勾选；卸载时会把 `PATH` 精确还原）与创建桌面快捷方式（默认不勾） |
+| 开始菜单 | 「poly 出题工作台」「使用说明（README）」「卸载」 |
+
+静默安装（脚本化部署 / CI）：
+
+```powershell
+poly-0.1.0-setup.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART `
+    /DIR="C:\tools\poly" /MERGETASKS=addtopath
+# 卸载： "<安装目录>\unins000.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
+```
+
+**便携版**：下载 `poly-<版本>-win64.zip`，解压到任意目录直接运行，不需要安装器与注册表。
+
+**从源码构建**：见下一节。
+
+> `poly` 的每个功能都不依赖安装位置：只要 `poly.exe` 在 `PATH` 里（或直接用绝对路径调用）即可。
+> 窗口界面（`poly-gui.exe`）与命令行完全等价，两者调同一套命令实现。
+
+---
+
 ## 1. 环境与构建
 
 | 项目 | 要求 |
@@ -33,9 +62,9 @@ poly ui                                    # 启动本地出题工作台（浏�
 | 可选 | xelatex / pdflatex（`poly statement --pdf` 才需要） |
 
 ```bash
-make            # 生成 bin/poly.exe
+make            # 生成 bin/poly.exe（命令行）与 bin/poly-gui.exe（窗口版，仅 Windows）
 make env        # 打印构建环境探测结果
-make clean
+make clean      # 删 build/，make distclean 连 bin/ 一起删
 ```
 
 > **MSYS2 用户请注意**：本机 PATH 中同时存在 `ucrt64` 与 `mingw64` 两套工具链时，
@@ -43,6 +72,11 @@ make clean
 > 使 binutils 回退到不可写的 `C:\WINDOWS`。`Makefile` 已自动处理这两件事
 > （`tools/pick-toolchain.sh` 会挑一个真正能编译的编译器，并把 `TMP/TEMP` 设为真实 Windows 路径）。
 > `poly` 自身同样会探测可用的编译器，因此命令行中直接 `poly build` 也能正常工作。
+>
+> **图标与版本信息**：`assets/*.rc` 由 `windres` 编译后链进两个 exe（中文串必须带
+> `--codepage=65001`）；`windres` 不在时 Makefile 会自动跳过，不影响构建。
+> `assets/icon.ico` 由 `tools/make-icon.ps1` 生成（256 用 PNG 帧、小尺寸用 DIB 帧，
+> 保证旧 API 也能读）。
 
 ---
 
