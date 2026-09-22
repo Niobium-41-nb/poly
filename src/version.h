@@ -1,6 +1,6 @@
 #pragma once
 
-#define POLY_VERSION "0.1.0"
+#define POLY_VERSION "0.1.1"
 
 #ifdef _WIN32
 #define POLY_PLATFORM "windows"

@@ -58,7 +58,8 @@ endif
 ifeq ($(IS_WIN),1)
 # ws2_32：poly ui --web 的本地 HTTP 服务（Winsock）
 # gdi32/comctl32/comdlg32：窗口版界面（控制台版也链它，因为 poly ui 可以就地开窗）
-LDFLAGS += -static -static-libgcc -static-libstdc++ -lws2_32 -lgdi32 -lcomctl32 -lcomdlg32
+# ole32：窗口版「切换工作区」用的 IFileDialog（COM）
+LDFLAGS += -static -static-libgcc -static-libstdc++ -lws2_32 -lgdi32 -lcomctl32 -lcomdlg32 -lole32
 endif
 
 .PHONY: all clean distclean env

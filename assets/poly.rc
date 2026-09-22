@@ -5,8 +5,8 @@
 1 ICON "icon.ico"
 
 1 VERSIONINFO
-FILEVERSION    0,1,0,0
-PRODUCTVERSION 0,1,0,0
+FILEVERSION    0,1,1,0
+PRODUCTVERSION 0,1,1,0
 FILEOS         0x40004
 FILETYPE       0x1
 BEGIN
@@ -16,12 +16,12 @@ BEGIN
     BEGIN
       VALUE "CompanyName",      "Niobium-41-nb"
       VALUE "FileDescription",  "poly 出题工作台（命令行）"
-      VALUE "FileVersion",      "0.1.0"
+      VALUE "FileVersion",      "0.1.1"
       VALUE "InternalName",     "poly"
       VALUE "LegalCopyright",   "Copyright (C) 2026 Niobium-41-nb. 内置 testlib.h 版权归 Mike Mirzayanov 所有。"
       VALUE "OriginalFilename", "poly.exe"
       VALUE "ProductName",      "poly 出题工作台"
-      VALUE "ProductVersion",   "0.1.0"
+      VALUE "ProductVersion",   "0.1.1"
     END
   END
   BLOCK "VarFileInfo"

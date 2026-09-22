@@ -11,7 +11,7 @@
 
 #define AppName        "poly 出题工作台"
 #define AppShortName   "poly"
-#define AppVersion     "0.1.0"
+#define AppVersion     "0.1.1"
 #define AppPublisher   "Niobium-41-nb"
 #define AppURL         "https://github.com/Niobium-41-nb/poly"
 #define ExeName        "poly.exe"

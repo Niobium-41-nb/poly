@@ -13,6 +13,7 @@
 #include <io.h>
 #include <windows.h>
 
+#include <shlobj.h>
 #include <shellapi.h>
 #endif
 
@@ -150,6 +151,42 @@ void env_set(const std::string& name, const std::string& value) {
     _putenv_s(name.c_str(), value.c_str());
 #else
     setenv(name.c_str(), value.c_str(), 1);
+#endif
+}
+
+std::string documents_dir() {
+#ifdef _WIN32
+    wchar_t path[MAX_PATH] = {};
+    if (SUCCEEDED(SHGetFolderPathW(nullptr, CSIDL_PERSONAL, nullptr, SHGFP_TYPE_CURRENT, path)) &&
+        path[0] != L'\0') {
+        return to_utf8(path);
+    }
+    std::string home = env_get("USERPROFILE");
+    if (!home.empty()) return home + "\\Documents";
+    return std::string();
+#else
+    std::string home = env_get("HOME");
+    if (!home.empty()) return home + "/Documents";
+    return std::string();
+#endif
+}
+
+std::string config_dir() {
+#ifdef _WIN32
+    wchar_t path[MAX_PATH] = {};
+    if (SUCCEEDED(SHGetFolderPathW(nullptr, CSIDL_APPDATA, nullptr, SHGFP_TYPE_CURRENT, path)) &&
+        path[0] != L'\0') {
+        return to_utf8(path) + "\\poly";
+    }
+    std::string appdata = env_get("APPDATA");
+    if (!appdata.empty()) return appdata + "\\poly";
+    return std::string();
+#else
+    const char* xdg = getenv("XDG_CONFIG_HOME");
+    if (xdg && xdg[0]) return std::string(xdg) + "/poly";
+    std::string home = env_get("HOME");
+    if (!home.empty()) return home + "/.config/poly";
+    return std::string();
 #endif
 }
 

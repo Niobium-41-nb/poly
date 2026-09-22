@@ -39,6 +39,7 @@ int run_win32_ui(Context& ctx) {
 #include <windows.h>
 #include <commctrl.h>
 #include <commdlg.h>
+#include <shobjidl.h>
 #include <shellapi.h>
 
 #include <algorithm>
@@ -51,6 +52,7 @@ int run_win32_ui(Context& ctx) {
 #include "format.h"
 #include "fsutil.h"
 #include "importer.h"
+#include "json.h"
 #include "log.h"
 #include "ops.h"
 #include "plat.h"
@@ -83,6 +85,7 @@ enum : int {
     IDC_OPENDIR,
     IDC_DOCTOR,
     IDC_INFO,
+    IDC_SWITCHWS,   // 切换工作区
     IDC_LBL_GROUP1 = 120,
     IDC_LBL_GROUP2,
     IDC_LBL_GROUP3,
@@ -667,7 +670,8 @@ void layout_controls(AppState& app, int W, int H) {
         int width;
     };
     const ToolBtn tools[] = {
-        {IDC_REFRESH, 80}, {IDC_IMPORT, 110}, {IDC_OPENDIR, 110}, {IDC_DOCTOR, 100},
+        {IDC_REFRESH, 80}, {IDC_IMPORT, 110}, {IDC_SWITCHWS, 140}, {IDC_OPENDIR, 110},
+        {IDC_DOCTOR, 100},
     };
     int x = m;
     int toolH = scale(kRowH, dpi);
@@ -743,7 +747,7 @@ void enable_controls(AppState& app, bool enabled) {
     for (int id : {IDC_RUN, IDC_STRESS, IDC_TEST_ALL, IDC_STATEMENT, IDC_OPEN_STMT, IDC_EXPORT,
                    IDC_CLEAN, IDC_BUILD, IDC_GEN, IDC_VALIDATE, IDC_REFRESH, IDC_IMPORT,
                    IDC_OPENDIR, IDC_DOCTOR, IDC_SOLUTION, IDC_TESTINDEX, IDC_GOOD, IDC_BAD,
-                   IDC_ROUNDS, IDC_FORMAT}) {
+                   IDC_ROUNDS, IDC_FORMAT, IDC_SWITCHWS}) {
         HWND h = GetDlgItem(app.main, id);
         if (h) EnableWindow(h, enabled);
     }
@@ -781,7 +785,94 @@ void open_statement_file(AppState& app) {
 }
 
 void open_workspace_dir(AppState& app) {
-    ShellExecuteW(nullptr, L"open", w(app.ctx->workspace).c_str(), nullptr, nullptr, SW_SHOWNORMAL);
+    // 工作区可能还没建（刚装好、或者被删了），先建出来再交给资源管理器，
+    // 否则 ShellExecute 会直接失败，用户看到的就是“点了没反应”。
+    if (!fs::is_dir(app.ctx->workspace) && !fs::mkdirs(app.ctx->workspace)) {
+        std::string msg = str("无法打开工作区：\n\n{}\n\n目录不存在，且创建失败。\n"
+                              "请用 -w <目录> 指定一个可写的目录，或检查权限。",
+                              app.ctx->workspace);
+        append_log(app, "  [FAIL]  " + msg + "\n");
+        MessageBoxW(app.main, w(msg).c_str(), L"poly 出题工作台", MB_OK | MB_ICONWARNING);
+        refresh_problems(app);
+        return;
+    }
+    HINSTANCE r = ShellExecuteW(nullptr, L"open", w(app.ctx->workspace).c_str(), nullptr, nullptr,
+                               SW_SHOWNORMAL);
+    if (reinterpret_cast<INT_PTR>(r) <= 32) {
+        std::string msg = str("无法打开工作区：\n\n{}", app.ctx->workspace);
+        append_log(app, "  [FAIL]  " + msg + "\n");
+        MessageBoxW(app.main, w(msg).c_str(), L"poly 出题工作台", MB_OK | MB_ICONWARNING);
+    }
+}
+
+// 选一个工作区目录（VS 风格的 IFileDialog，FOS_PICKFOLDERS）。取消时返回空串。
+// GUID 直接写成常量：不依赖 MinGW 头文件里的 __uuidof 支持。
+std::string pick_workspace_folder(HWND owner, const std::string& initial) {
+    static const GUID kClsidFileOpenDialog = {
+        0xDC1C5A9C, 0xE88A, 0x4DDE, {0xA5, 0xA1, 0x60, 0xF8, 0x2A, 0x20, 0xAE, 0xF7}};
+    static const GUID kIidFileDialog = {
+        0x42F85136, 0xDB7E, 0x439C, {0x85, 0xF1, 0xE4, 0x07, 0x5D, 0x13, 0x5F, 0xC8}};
+    static const GUID kIidShellItem = {
+        0x43826D1E, 0xE718, 0x42EE, {0xBC, 0x55, 0xA1, 0xE2, 0x61, 0xC3, 0x7B, 0xFE}};
+
+    IFileDialog* dlg = nullptr;
+    if (FAILED(CoCreateInstance(kClsidFileOpenDialog, nullptr, CLSCTX_INPROC_SERVER, kIidFileDialog,
+                                reinterpret_cast<void**>(&dlg))) ||
+        dlg == nullptr) {
+        return std::string();
+    }
+    DWORD flags = 0;
+    dlg->GetOptions(&flags);
+    dlg->SetOptions(flags | FOS_PICKFOLDERS | FOS_FORCEFILESYSTEM | FOS_PATHMUSTEXIST);
+    dlg->SetTitle(L"选择 poly 工作区目录（题目就建在里面）");
+    if (!initial.empty()) {
+        IShellItem* start = nullptr;
+        if (SUCCEEDED(SHCreateItemFromParsingName(w(initial).c_str(), nullptr, kIidShellItem,
+                                                 reinterpret_cast<void**>(&start))) &&
+            start != nullptr) {
+            dlg->SetFolder(start);
+            start->Release();
+        }
+    }
+
+    std::string out;
+    if (SUCCEEDED(dlg->Show(owner))) {
+        IShellItem* item = nullptr;
+        if (SUCCEEDED(dlg->GetResult(&item)) && item != nullptr) {
+            PWSTR path = nullptr;
+            if (SUCCEEDED(item->GetDisplayName(SIGDN_FILESYSPATH, &path)) && path != nullptr) {
+                out = to_utf8(path);
+                CoTaskMemFree(path);
+            }
+            item->Release();
+        }
+    }
+    dlg->Release();
+    return out;
+}
+
+// 把工作区切到 dir：建目录、刷新列表与下拉框、并记住选择
+void apply_workspace(AppState& app, const std::string& dir) {
+    if (trim(dir).empty()) return;
+    std::string abs = fs::absolute(trim(dir));
+    if (abs == app.ctx->workspace) return;
+    if (!fs::is_dir(abs) && !fs::mkdirs(abs)) {
+        std::string msg = str("无法把工作区切换到：\n\n{}\n\n目录不存在，且创建失败。", abs);
+        append_log(app, "  [FAIL]  " + msg + "\n");
+        MessageBoxW(app.main, w(msg).c_str(), L"poly 出题工作台", MB_OK | MB_ICONWARNING);
+        return;
+    }
+    app.ctx->workspace = abs;
+    ui_save_workspace(abs);
+    append_log(app, str("  工作区已切换为 {}\n", abs));
+    refresh_problems(app);
+    refresh_solution_combos(app);
+}
+
+void switch_workspace(AppState& app) {
+    std::string dir = pick_workspace_folder(app.main, app.ctx->workspace);
+    if (dir.empty()) return;  // 用户取消
+    apply_workspace(app, dir);
 }
 
 void run_solution(AppState& app) {
@@ -834,6 +925,7 @@ LRESULT CALLBACK main_wnd_proc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam
             };
             createTool(IDC_REFRESH, L"刷新");
             createTool(IDC_IMPORT, L"导入题目…");
+            createTool(IDC_SWITCHWS, L"切换工作区…");
             createTool(IDC_OPENDIR, L"打开工作区");
             createTool(IDC_DOCTOR, L"环境自检");
 
@@ -1043,6 +1135,7 @@ LRESULT CALLBACK main_wnd_proc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam
             switch (id) {
                 case IDC_REFRESH: refresh_problems(*app); return 0;
                 case IDC_IMPORT: open_import_window(*app); return 0;
+                case IDC_SWITCHWS: switch_workspace(*app); return 0;
                 case IDC_OPENDIR: open_workspace_dir(*app); return 0;
                 case IDC_DOCTOR: run_action(*app, "doctor"); return 0;
                 case IDC_BUILD: run_action(*app, "build"); return 0;
@@ -1085,13 +1178,46 @@ LRESULT CALLBACK main_wnd_proc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam
 
 }  // namespace
 
+// 界面里记住的工作区：%APPDATA%\poly\ui.json 里的 workspace 字段。
+std::string ui_saved_workspace() {
+    std::string dir = config_dir();
+    if (dir.empty()) return std::string();
+    std::string text;
+    if (!fs::read_file(fs::join(dir, "ui.json"), text)) return std::string();
+    Json j;
+    if (!Json::parse(text, j)) return std::string();
+    std::string ws = trim(j["workspace"].as_string());
+    // 目录已经不在了（换机器 / 删了）就当作没记过，回退到默认值
+    if (ws.empty() || !fs::is_dir(ws)) return std::string();
+    return ws;
+}
+
+bool ui_save_workspace(const std::string& workspace) {
+    std::string dir = config_dir();
+    if (dir.empty()) return false;
+    Json j = Json::object();
+    j.set("workspace", Json(workspace));
+    return fs::write_file(fs::join(dir, "ui.json"), j.dump(2) + "\n");
+}
+
 int run_win32_ui(Context& ctx) {
     // 高分屏：先声明 DPI 感知，所有设计尺寸再按实际 DPI 换算。
     SetProcessDPIAware();
+    // 选择目录要用 IFileDialog（COM）：失败也不影响其它功能
+    CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED);
     HDC screen = GetDC(nullptr);
     int dpi = screen ? GetDeviceCaps(screen, LOGPIXELSX) : 96;
     if (screen) ReleaseDC(nullptr, screen);
     if (dpi <= 0) dpi = 96;
+
+    // 界面一打开就把工作区准备好：按钮“打开工作区”、导入、新建都靠它，
+    // 目录建不出来时直接告诉用户（而不是等某个操作莫名其妙地失败）。
+    if (!fs::is_dir(ctx.workspace) && !fs::mkdirs(ctx.workspace)) {
+        std::string msg = str("无法创建 / 访问工作区：\n\n{}\n\n"
+                              "请用 poly-gui -w <目录> 指定一个可写目录。",
+                              ctx.workspace);
+        MessageBoxW(nullptr, to_wide(msg).c_str(), L"poly 出题工作台", MB_OK | MB_ICONWARNING);
+    }
 
     INITCOMMONCONTROLSEX icc{};
     icc.dwSize = sizeof(icc);
@@ -1110,8 +1236,11 @@ int run_win32_ui(Context& ctx) {
     wc.hCursor = LoadCursorW(nullptr, IDC_ARROW);
     wc.hbrBackground = reinterpret_cast<HBRUSH>(COLOR_WINDOW + 1);
     wc.lpszClassName = kMainClass;
-    wc.hIcon = LoadIconW(nullptr, IDI_APPLICATION);
-    wc.hIconSm = wc.hIcon;
+    // 用 exe 里嵌的资源图标（assets/poly-gui.rc 里 ID=1），取不到再退回系统默认图标
+    HICON appIcon = LoadIconW(GetModuleHandleW(nullptr), MAKEINTRESOURCEW(1));
+    if (!appIcon) appIcon = LoadIconW(nullptr, IDI_APPLICATION);
+    wc.hIcon = appIcon;
+    wc.hIconSm = appIcon;
     if (!RegisterClassExW(&wc)) {
         log_err("注册窗口类失败");
         return 1;
