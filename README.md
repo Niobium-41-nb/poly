@@ -37,7 +37,7 @@ poly ui                                    # 启动本地出题工作台（浏�
 静默安装（脚本化部署 / CI）：
 
 ```powershell
-poly-0.1.0-setup.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART `
+poly-0.1.1-setup.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART `
     /DIR="C:\tools\poly" /MERGETASKS=addtopath
 # 卸载： "<安装目录>\unins000.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
 ```
@@ -48,6 +48,11 @@ poly-0.1.0-setup.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART `
 
 > `poly` 的每个功能都不依赖安装位置：只要 `poly.exe` 在 `PATH` 里（或直接用绝对路径调用）即可。
 > 窗口界面（`poly-gui.exe`）与命令行完全等价，两者调同一套命令实现。
+>
+> **工作区位置**：命令行默认用当前目录下的 `problems/`；从开始菜单/桌面双击窗口版时
+> 没有当前目录可言，默认用 **`文档\poly`**（可用 `poly ui -w <目录>` 或 `poly-gui -w <目录>` 指定）。
+> 窗口版工具栏里还有一个 **「切换工作区…」** 按钮，选完立即生效并记住
+> （存在 `%APPDATA%\poly\ui.json`，下次启动没有 `-w` 时就用它）。
 
 ---
 
